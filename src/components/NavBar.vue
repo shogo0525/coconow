@@ -20,6 +20,7 @@
         <div class="navbar-item">
           <template v-if="currentUser">
             <p>{{ currentUser.displayName }}</p>
+            <p><img :src="currentUser.photoURL" alt=""></p>
             <a @click="logout" class="navbar-item">Logout</a>
           </template>
           <template v-else>
@@ -47,6 +48,7 @@ export default {
         this.currentUser = null
       } else {
         this.currentUser = user
+        console.log(user)
       }
     });
   },
