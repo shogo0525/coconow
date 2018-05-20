@@ -50,7 +50,7 @@ export default {
         this.currentUser = user
         console.log(user)
       }
-    });
+    })
   },
   methods: {
     logout () {

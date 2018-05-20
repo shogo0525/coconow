@@ -16,11 +16,14 @@ export default {
   name: 'login',
   data () {
     return {
-      userData: {
-        name: '',
-        image: '',
-      }
     }
+  },
+  created () {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.$router.push('/')
+      }
+    })
   },
   methods: {
     loginWithTwitter () {
